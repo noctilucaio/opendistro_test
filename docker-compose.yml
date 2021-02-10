@@ -76,10 +76,10 @@ services:
       - odfe-net
 
   logstash:
-    image: docker.elastic.co/logstash/logstash-oss:7.0.0
+    image: docker.elastic.co/logstash/logstash-oss:7.10.2
     container_name: logstash
     volumes:
-    - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
       - "5044:5044"
     networks:
