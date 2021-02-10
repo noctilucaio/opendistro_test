@@ -41,7 +41,7 @@ services:
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - discovery.zen.ping.unicast.hosts=odfe-node1
+#      - discovery.zen.ping.unicast.hosts=odfe-node1
 #      - cluster.initial_master_nodes=odfe-node1,odfe-node2
 #      - discovery.seed_hosts=odfe-node1,odfe-node2
       - opendistro_security.ssl.http.enabled=false
