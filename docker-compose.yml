@@ -12,8 +12,8 @@ services:
       - node.name=odfe-node1
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
-#      - opendistro_security.ssl.http.enabled=false
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - opendistro_security.ssl.http.enabled=false
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
       - cluster.initial_master_nodes=odfe-node1,odfe-node2
       - discovery.seed_hosts=odfe-node1,odfe-node2
     ulimits:
@@ -40,7 +40,7 @@ services:
       - node.name=odfe-node2
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
       - cluster.initial_master_nodes=odfe-node1,odfe-node2
       - discovery.seed_hosts=odfe-node1,odfe-node2
 #      - opendistro_security.ssl.http.enabled=false
