@@ -12,10 +12,10 @@ services:
       - node.name=odfe-node1
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
-#      - opendistro_security.ssl.http.enabled=false
+      - opendistro_security.ssl.http.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - cluster.initial_master_nodes=odfe-node1,odfe-node2
-      - discovery.seed_hosts=odfe-node1,odfe-node2
+#      - cluster.initial_master_nodes=odfe-node1,odfe-node2
+#      - discovery.seed_hosts=odfe-node1,odfe-node2
     ulimits:
       memlock:
         soft: -1
@@ -41,9 +41,10 @@ services:
       - cluster.name=odfe-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - cluster.initial_master_nodes=odfe-node1,odfe-node2
-      - discovery.seed_hosts=odfe-node1,odfe-node2
-#      - opendistro_security.ssl.http.enabled=false
+      - discovery.zen.ping.unicast.hosts=odfe-node1
+#      - cluster.initial_master_nodes=odfe-node1,odfe-node2
+#      - discovery.seed_hosts=odfe-node1,odfe-node2
+      - opendistro_security.ssl.http.enabled=false
     ulimits:
       memlock:
         soft: -1
